@@ -1,7 +1,7 @@
 import { allProjects } from 'contentlayer/generated'
 
-import { ProjectCard } from '@/components/molecules/project-card'
-import { FadeIn, FadeInStagger, AnimatePresence } from '@/components/atoms/fade-in'
+import { ProjectCard } from '@/../components/molecules/project-card'
+import { FadeIn, FadeInStagger, AnimatePresence } from '@/../components/atoms/fade-in'
 
 type SearchParamsProps = {
   searchParams: {

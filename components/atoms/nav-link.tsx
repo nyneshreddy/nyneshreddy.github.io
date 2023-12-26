@@ -1,7 +1,7 @@
 'use client'
 import Link from 'next/link'
 import { useSelectedLayoutSegment } from 'next/navigation'
-import { cn } from '@/lib/utils'
+import { cn } from '@/../lib/utils'
 
 type Props = {
   href: string

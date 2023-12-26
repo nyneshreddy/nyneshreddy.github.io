@@ -1,6 +1,6 @@
-import { FadeIn } from '@/components/atoms/fade-in'
-import { GridPattern } from '@/components/atoms/grid-pattern'
-import { AnimatedName } from '@/components/molecules/animated-name'
+import { FadeIn } from '@/../components/atoms/fade-in'
+import { GridPattern } from '@/../components/atoms/grid-pattern'
+import { AnimatedName } from '@/../components/molecules/animated-name'
 
 export default function Home() {
   return (

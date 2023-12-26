@@ -3,7 +3,7 @@ import { BiGitBranch, BiRefresh, BiXCircle } from 'react-icons/bi'
 import { IoWarningOutline, IoLogoGithub } from 'react-icons/io5'
 import { AiOutlineClockCircle } from 'react-icons/ai'
 
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/atoms/tooltip'
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/../components/atoms/tooltip'
 
 export const Footer = async () => {
 

@@ -1,5 +1,5 @@
 import { Metadata } from 'next'
-import { ENV } from '@/lib/constants'
+import { ENV } from '@/../lib/constants'
 
 const title = '404'
 const description = 'Sorry, i couldn’t find the page you’re looking for.'

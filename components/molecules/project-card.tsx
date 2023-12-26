@@ -1,8 +1,8 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger, DialogFooter } from '@/components/atoms/dialog'
-import { Badge } from '@/components/atoms/badge'
-import { buttonVariants } from '@/components/atoms/button'
+import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger, DialogFooter } from '@/../components/atoms/dialog'
+import { Badge } from '@/../components/atoms/badge'
+import { buttonVariants } from '@/../components/atoms/button'
 import { Projects } from 'contentlayer/generated'
 
 export const ProjectCard = ({ data }: { data: Projects }) => {

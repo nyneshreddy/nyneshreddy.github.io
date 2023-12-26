@@ -1,7 +1,7 @@
 import { notFound } from 'next/navigation'
 import { allAbouts } from 'contentlayer/generated'
 
-import { MDXComponent } from '@/components/molecules/mdx-component'
+import { MDXComponent } from '@/../components/molecules/mdx-component'
 
 type ParamsProps = {
   title: string

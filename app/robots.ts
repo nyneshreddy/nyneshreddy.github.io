@@ -1,4 +1,4 @@
-import { ENV } from '@/lib/constants'
+import { ENV } from '@/../lib/constants'
 
 export default function robots() {
   return {

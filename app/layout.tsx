@@ -5,13 +5,13 @@ import { GeistMono } from 'geist/font/mono'
 import { Analytics } from '@vercel/analytics/react'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 
-import { ThemeWrapper } from '@/components/atoms/theme-wrapper'
-import { Navbar } from '@/components/organisms/navbar'
-import { NavbarMobile, NavbarProvider } from '@/components/organisms/navbar-mobile'
-import { Footer } from '@/components/organisms/footer'
-import { ResponsiveIndicator } from '@/components/atoms/responsive-indicator'
+import { ThemeWrapper } from '@/../components/atoms/theme-wrapper'
+import { Navbar } from '@/../components/organisms/navbar'
+import { NavbarMobile, NavbarProvider } from '@/../components/organisms/navbar-mobile'
+import { Footer } from '@/../components/organisms/footer'
+import { ResponsiveIndicator } from '@/../components/atoms/responsive-indicator'
 
-import { ENV } from '@/lib/constants'
+import { ENV } from '@/../lib/constants'
 
 export const metadata: Metadata = {
   metadataBase: new URL(ENV.NEXT_PUBLIC_WEBSITE_URL),

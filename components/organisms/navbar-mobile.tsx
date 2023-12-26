@@ -3,8 +3,8 @@ import Link from 'next/link'
 import { Menu } from 'lucide-react'
 import { Fragment, createContext, useContext, useState } from 'react'
 
-import { FadeIn, AnimatePresence } from '@/components/atoms/fade-in'
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/atoms/accordion'
+import { FadeIn, AnimatePresence } from '@/../components/atoms/fade-in'
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/../components/atoms/accordion'
 
 interface NavbarMobileContextProps {
   isOpen: boolean

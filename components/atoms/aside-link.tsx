@@ -4,7 +4,7 @@ import { useSelectedLayoutSegment } from 'next/navigation'
 import { useSearchParams } from 'next/navigation'
 import { type ClassValue } from 'clsx'
 
-import { cn } from '@/lib/utils'
+import { cn } from '@/../lib/utils'
 
 type Props = {
   href: string

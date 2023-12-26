@@ -3,9 +3,9 @@ import { RiReactjsLine, RiHtml5Fill } from 'react-icons/ri'
 import { TbBrandNextjs } from 'react-icons/tb'
 import { HiTerminal } from 'react-icons/hi'
 
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/atoms/accordion'
-import { AsideLink } from '@/components/atoms/aside-link'
-import { FadeInStagger, FadeIn } from '@/components/atoms/fade-in'
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/../components/atoms/accordion'
+import { AsideLink } from '@/../components/atoms/aside-link'
+import { FadeInStagger, FadeIn } from '@/../components/atoms/fade-in'
 
 
 

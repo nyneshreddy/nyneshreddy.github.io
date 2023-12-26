@@ -1,11 +1,11 @@
 import Link from 'next/link'
 import { allArticles } from 'contentlayer/generated'
 
-import { Card, CardHeader, CardTitle, CardFooter, CardContent } from '@/components/atoms/card'
-import { Badge } from '@/components/atoms/badge'
-import { Button } from '@/components/atoms/button'
-import { FadeInStagger, FadeIn, AnimatePresence } from '@/components/atoms/fade-in'
-import { ENV } from '@/lib/constants'
+import { Card, CardHeader, CardTitle, CardFooter, CardContent } from '@/../components/atoms/card'
+import { Badge } from '@/../components/atoms/badge'
+import { Button } from '@/../components/atoms/button'
+import { FadeInStagger, FadeIn, AnimatePresence } from '@/../components/atoms/fade-in'
+import { ENV } from '@/../lib/constants'
 
 type SearchParamsProps = {
   searchParams: {

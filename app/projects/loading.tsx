@@ -1,4 +1,4 @@
-import { PageLoading } from '@/components/atoms/page-loading'
+import { PageLoading } from '@/../components/atoms/page-loading'
 
 export default function Loading() {
   return (

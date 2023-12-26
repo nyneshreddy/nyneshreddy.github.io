@@ -3,7 +3,7 @@ import { allAbouts } from 'contentlayer/generated'
 import { allProjects } from 'contentlayer/generated'
 import { allArticles } from 'contentlayer/generated'
 
-import { ENV } from '@/lib/constants'
+import { ENV } from '@/../lib/constants'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const WEBSITE_URL = ENV.NEXT_PUBLIC_WEBSITE_URL

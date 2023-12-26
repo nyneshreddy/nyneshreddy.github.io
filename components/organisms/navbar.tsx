@@ -1,7 +1,7 @@
 import Link from 'next/link'
 
-import { NavLink } from '@/components/atoms/nav-link'
-import { ThemeToggle } from '@/components/molecules/theme-toggler'
+import { NavLink } from '@/../components/atoms/nav-link'
+import { ThemeToggle } from '@/../components/molecules/theme-toggler'
 
 import { NavbarMobileBtn } from './navbar-mobile'
 
