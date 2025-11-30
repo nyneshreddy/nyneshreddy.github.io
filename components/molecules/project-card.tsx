@@ -12,9 +12,9 @@ export const ProjectCard = ({ data }: { data: Projects }) => {
         <article className='rounded-md overflow-hidden group hover:shadow-2xl transition-shadow duration-500 border hover:shadow-secondary'>
           <figure className='relative aspect-video overflow-hidden'>
             <Image
-              src={data.image}
-              alt={data.title}
-              blurDataURL={data.image}
+              src={data.image || ''}
+              alt={data.title || ''}
+              blurDataURL={data.image || ''}
               placeholder='blur'
               quality={10}
               fill
@@ -23,7 +23,7 @@ export const ProjectCard = ({ data }: { data: Projects }) => {
               priority
             />
             <div className='w-full h-full absolute z-30 flex items-center rounded-t justify-center bg-background/80 backdrop-blur-sm overflow-hidden group-hover:opacity-0 transition-opacity duration-500'>
-              <p className='text-3xl italic font-semibold uppercase'>{data.title}</p>
+              <p className='text-3xl italic font-semibold uppercase'>{data.title || ''}</p>
             </div>
           </figure>
 
@@ -34,10 +34,10 @@ export const ProjectCard = ({ data }: { data: Projects }) => {
       </DialogTrigger>
       <DialogContent className='shadow-2xl shadow-secondary max-w-2xl'>
         <DialogHeader>
-          <DialogTitle className='mb-2'>{data.title}</DialogTitle>
+          <DialogTitle className='mb-2'>{data.title || ''}</DialogTitle>
           <DialogDescription>
             <figure className='relative aspect-video overflow-hidden rounded-md mb-5'>
-              <Image src={data.image} alt={data.title} fill className='object-cover object-top group-hover:scale-105 transition-transform duration-500' />
+              <Image src={data.image || ''} alt={data.title || ''} fill className='object-cover object-top group-hover:scale-105 transition-transform duration-500' />
             </figure>
             <ul className='flex items-center gap-x-2 border-y py-2'>
               <li className='text-foreground'>Technologies :</li>
@@ -53,7 +53,7 @@ export const ProjectCard = ({ data }: { data: Projects }) => {
           </DialogDescription>
         </DialogHeader>
         <DialogFooter>
-          <Link href={`/projects/${data.title.toLowerCase()}`} className={buttonVariants({ variant: 'default' })}>
+          <Link href={`/projects/${data.slug}`} className={buttonVariants({ variant: 'default' })}>
             Details
           </Link>
         </DialogFooter>

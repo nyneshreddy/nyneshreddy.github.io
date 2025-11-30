@@ -19,7 +19,7 @@ const About = defineDocumentType(() => ({
   contentType: 'mdx',
   fields: {
     title: { type: 'string', required: true },
-    summary: { type: 'string', required: true }
+    summary: { type: 'string', required: false }
   },
   computedFields
 }))
@@ -30,13 +30,13 @@ const Projects = defineDocumentType(() => ({
   filePathPattern: `projects/**/*.mdx`,
   contentType: 'mdx',
   fields: {
-    title: { type: 'string', required: true },
-    summary: { type: 'string', required: true },
-    image: { type: 'string', required: true },
+    title: { type: 'string', required: false },
+    summary: { type: 'string', required: false },
+    image: { type: 'string', required: false },
     tag: {
       type: 'list',
       of: { type: 'string' },
-      required: true
+      required: false
     }
   },
   computedFields
@@ -113,7 +113,7 @@ const rehypePrettyOptions = {
 
 /** @type {import('contentlayer/source-files').SourcePlugin} */
 export default makeSource({
-  contentDirPath: './src/content',
+  contentDirPath: './content',
   documentTypes: [About, Projects, Articles],
   mdx: {
     remarkPlugins: [remarkGfm],

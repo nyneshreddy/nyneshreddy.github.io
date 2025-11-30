@@ -19,7 +19,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   }))
 
   const projects = allProjects.map(project => ({
-    url: `${WEBSITE_URL}/projects/${project.title.toLowerCase()}`,
+    url: `${WEBSITE_URL}/projects/${project.slug}`,
     lastModified: new Date().toISOString().split('T')[0]
   }))
 

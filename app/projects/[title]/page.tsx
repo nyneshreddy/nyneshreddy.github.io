@@ -8,7 +8,7 @@ type ParamsProps = {
 }
 
 async function getProjectFromParams(params: ParamsProps) {
-  const post = allProjects.find(post => post.title.toLowerCase() === params.title)
+  const post = allProjects.find(post => post.slug === params.title)
   if (!post) null
 
   return post
@@ -16,7 +16,7 @@ async function getProjectFromParams(params: ParamsProps) {
 
 export async function generateStaticParams() {
   return allProjects.map(post => ({
-    title: post.title.toLowerCase()
+    title: post.slug
   }))
 }
 

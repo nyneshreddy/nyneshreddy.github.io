@@ -8,14 +8,15 @@ type ParamsProps = {
 }
 
 async function getContent(params: ParamsProps) {
-  const post = allAbouts.find(post => post.title === params.title)
+  const post = allAbouts.find(post => post.slug === params.title)
   if (!post) null
   return post
 }
 
 export async function generateStaticParams() {
+  console.log('Generating params for About:', allAbouts.map(post => ({ title: post.slug })))
   return allAbouts.map(post => ({
-    title: post.title.toLowerCase()
+    title: post.slug
   }))
 }
 

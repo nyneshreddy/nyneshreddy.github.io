@@ -1,5 +1,8 @@
+'use client'
+
 import Link from 'next/link'
 import { allArticles } from 'contentlayer/generated'
+import { useSearchParams } from 'next/navigation'
 
 import { Card, CardHeader, CardTitle, CardFooter, CardContent } from '@/../components/atoms/card'
 import { Badge } from '@/../components/atoms/badge'
@@ -7,22 +10,16 @@ import { Button } from '@/../components/atoms/button'
 import { FadeInStagger, FadeIn, AnimatePresence } from '@/../components/atoms/fade-in'
 import { ENV } from '@/../lib/constants'
 
-type SearchParamsProps = {
-  searchParams: {
-    tag: string
-  }
-}
-
 const title = 'articles'
 const description =
   "Embark on a journey through a diverse collection of articles, ranging from React deep-dives to engaging non-technical discussions. Whether you're exploring the entire repository or seeking insights on a specific tag, our articles cover a spectrum of topics to cater to both technical enthusiasts and those looking for non-technical perspectives. Discover thought-provoking content and immerse yourself in the world of insights and ideas."
 const url = `${ENV.NEXT_PUBLIC_WEBSITE_URL}/articles`
 const image = `${ENV.NEXT_PUBLIC_WEBSITE_URL}/api/og?title=${title}`
 
-
-export default function Articles({ searchParams }: SearchParamsProps) {
-  const { tag } = searchParams
-  let filteredArticles = tag ? allArticles.filter(articles => articles.tag.includes(tag)) : allArticles
+export default function Articles() {
+  const searchParams = useSearchParams()
+  const tag = searchParams.get('tag')
+  let filteredArticles = tag ? allArticles.filter(articles => articles.tag?.includes(tag)) : allArticles
 
   return (
     <FadeInStagger className='grid md:grid-cols-2 gap-5 p-5' faster>

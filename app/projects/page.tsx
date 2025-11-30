@@ -1,17 +1,14 @@
-import { allProjects } from 'contentlayer/generated'
+'use client'
 
+import { allProjects } from 'contentlayer/generated'
+import { useSearchParams } from 'next/navigation'
 import { ProjectCard } from '@/../components/molecules/project-card'
 import { FadeIn, FadeInStagger, AnimatePresence } from '@/../components/atoms/fade-in'
 
-type SearchParamsProps = {
-  searchParams: {
-    tag: string
-  }
-}
-
-export default function ProjectPage({ searchParams }: SearchParamsProps) {
-  const { tag } = searchParams
-  let filteredProjects = tag ? allProjects.filter(project => project.tag.includes(tag)) : allProjects
+export default function ProjectPage() {
+  const searchParams = useSearchParams()
+  const tag = searchParams.get('tag')
+  let filteredProjects = tag ? allProjects.filter(project => project.tag?.includes(tag)) : allProjects
 
   return (
     <FadeInStagger className='grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 p-5' faster>
