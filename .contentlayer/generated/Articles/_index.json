@@ -1,1 +1,31 @@
-[]
+[
+  {
+    "title": "Hello World",
+    "summary": "My first article on this site.",
+    "publishedDate": "2024-01-15",
+    "tag": [
+      "general",
+      "first-post"
+    ],
+    "body": {
+      "raw": "\n## Hello World!\n\nWelcome to my website. This is my first article.\n\nThis site is hosted on a Raspberry Pi running Nginx. Pretty cool, right?\n\nStay tuned for more content!\n",
+      "code": "var Component=(()=>{var h=Object.create;var i=Object.defineProperty;var m=Object.getOwnPropertyDescriptor;var p=Object.getOwnPropertyNames;var u=Object.getPrototypeOf,x=Object.prototype.hasOwnProperty;var f=(t,e)=>()=>(e||t((e={exports:{}}).exports,e),e.exports),g=(t,e)=>{for(var r in e)i(t,r,{get:e[r],enumerable:!0})},a=(t,e,r,o)=>{if(e&&typeof e==\"object\"||typeof e==\"function\")for(let s of p(e))!x.call(t,s)&&s!==r&&i(t,s,{get:()=>e[s],enumerable:!(o=m(e,s))||o.enumerable});return t};var y=(t,e,r)=>(r=t!=null?h(u(t)):{},a(e||!t||!t.__esModule?i(r,\"default\",{value:t,enumerable:!0}):r,t)),j=t=>a(i({},\"__esModule\",{value:!0}),t);var c=f((W,l)=>{l.exports=_jsx_runtime});var D={};g(D,{default:()=>w,frontmatter:()=>_});var n=y(c()),_={title:\"Hello World\",summary:\"My first article on this site.\",publishedDate:new Date(17052768e5),tag:[\"general\",\"first-post\"]};function d(t){let e=Object.assign({h2:\"h2\",a:\"a\",span:\"span\",p:\"p\"},t.components);return(0,n.jsxs)(n.Fragment,{children:[(0,n.jsxs)(e.h2,{id:\"hello-world\",children:[(0,n.jsx)(e.a,{\"aria-hidden\":\"true\",tabIndex:\"-1\",href:\"#hello-world\",children:(0,n.jsx)(e.span,{className:\"icon icon-link\"})}),\"Hello World!\"]}),`\n`,(0,n.jsx)(e.p,{children:\"Welcome to my website. This is my first article.\"}),`\n`,(0,n.jsx)(e.p,{children:\"This site is hosted on a Raspberry Pi running Nginx. Pretty cool, right?\"}),`\n`,(0,n.jsx)(e.p,{children:\"Stay tuned for more content!\"})]})}function b(t={}){let{wrapper:e}=t.components||{};return e?(0,n.jsx)(e,Object.assign({},t,{children:(0,n.jsx)(d,t)})):d(t)}var w=b;return j(D);})();\n;return Component;"
+    },
+    "_id": "articles/hello-world.mdx",
+    "_raw": {
+      "sourceFilePath": "articles/hello-world.mdx",
+      "sourceFileName": "hello-world.mdx",
+      "sourceFileDir": "articles",
+      "contentType": "mdx",
+      "flattenedPath": "articles/hello-world"
+    },
+    "type": "Articles",
+    "slug": "hello-world",
+    "headings": [
+      {
+        "level": "two",
+        "text": "Hello World!"
+      }
+    ]
+  }
+]
