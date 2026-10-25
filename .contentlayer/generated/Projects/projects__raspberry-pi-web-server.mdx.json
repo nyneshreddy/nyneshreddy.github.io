@@ -1,0 +1,23 @@
+{
+  "title": "Raspberry Pi Web Server",
+  "summary": "Hosting a Next.js website on a Raspberry Pi with Nginx.",
+  "tag": [
+    "raspberry-pi",
+    "nginx",
+    "self-hosting"
+  ],
+  "body": {
+    "raw": "\n## Raspberry Pi Web Server\n\nThis very website is being served from a Raspberry Pi running Nginx!\n\n### Tech Stack\n- **Raspberry Pi** - The server hardware\n- **Nginx** - Web server serving static files\n- **Next.js** - React framework with static export\n- **Contentlayer** - Content management\n\n### How It Works\nThe Next.js app is built locally and the static `out/` directory is deployed to the Pi's `/var/www/html/` directory.\n",
+    "code": "var Component=(()=>{var d=Object.create;var s=Object.defineProperty;var p=Object.getOwnPropertyDescriptor;var b=Object.getOwnPropertyNames;var g=Object.getPrototypeOf,x=Object.prototype.hasOwnProperty;var m=(r,e)=>()=>(e||r((e={exports:{}}).exports,e),e.exports),u=(r,e)=>{for(var i in e)s(r,i,{get:e[i],enumerable:!0})},c=(r,e,i,a)=>{if(e&&typeof e==\"object\"||typeof e==\"function\")for(let t of b(e))!x.call(r,t)&&t!==i&&s(r,t,{get:()=>e[t],enumerable:!(a=p(e,t))||a.enumerable});return r};var w=(r,e,i)=>(i=r!=null?d(g(r)):{},c(e||!r||!r.__esModule?s(i,\"default\",{value:r,enumerable:!0}):i,r)),y=r=>c(s({},\"__esModule\",{value:!0}),r);var h=m((_,o)=>{o.exports=_jsx_runtime});var v={};u(v,{default:()=>k,frontmatter:()=>f});var n=w(h()),f={title:\"Raspberry Pi Web Server\",summary:\"Hosting a Next.js website on a Raspberry Pi with Nginx.\",tag:[\"raspberry-pi\",\"nginx\",\"self-hosting\"]};function l(r){let e=Object.assign({h2:\"h2\",a:\"a\",span:\"span\",p:\"p\",h3:\"h3\",ul:\"ul\",li:\"li\",strong:\"strong\",code:\"code\"},r.components);return(0,n.jsxs)(n.Fragment,{children:[(0,n.jsxs)(e.h2,{id:\"raspberry-pi-web-server\",children:[(0,n.jsx)(e.a,{\"aria-hidden\":\"true\",tabIndex:\"-1\",href:\"#raspberry-pi-web-server\",children:(0,n.jsx)(e.span,{className:\"icon icon-link\"})}),\"Raspberry Pi Web Server\"]}),`\n`,(0,n.jsx)(e.p,{children:\"This very website is being served from a Raspberry Pi running Nginx!\"}),`\n`,(0,n.jsxs)(e.h3,{id:\"tech-stack\",children:[(0,n.jsx)(e.a,{\"aria-hidden\":\"true\",tabIndex:\"-1\",href:\"#tech-stack\",children:(0,n.jsx)(e.span,{className:\"icon icon-link\"})}),\"Tech Stack\"]}),`\n`,(0,n.jsxs)(e.ul,{children:[`\n`,(0,n.jsxs)(e.li,{children:[(0,n.jsx)(e.strong,{children:\"Raspberry Pi\"}),\" - The server hardware\"]}),`\n`,(0,n.jsxs)(e.li,{children:[(0,n.jsx)(e.strong,{children:\"Nginx\"}),\" - Web server serving static files\"]}),`\n`,(0,n.jsxs)(e.li,{children:[(0,n.jsx)(e.strong,{children:\"Next.js\"}),\" - React framework with static export\"]}),`\n`,(0,n.jsxs)(e.li,{children:[(0,n.jsx)(e.strong,{children:\"Contentlayer\"}),\" - Content management\"]}),`\n`]}),`\n`,(0,n.jsxs)(e.h3,{id:\"how-it-works\",children:[(0,n.jsx)(e.a,{\"aria-hidden\":\"true\",tabIndex:\"-1\",href:\"#how-it-works\",children:(0,n.jsx)(e.span,{className:\"icon icon-link\"})}),\"How It Works\"]}),`\n`,(0,n.jsxs)(e.p,{children:[\"The Next.js app is built locally and the static \",(0,n.jsx)(e.code,{children:\"out/\"}),\" directory is deployed to the Pi's \",(0,n.jsx)(e.code,{children:\"/var/www/html/\"}),\" directory.\"]})]})}function j(r={}){let{wrapper:e}=r.components||{};return e?(0,n.jsx)(e,Object.assign({},r,{children:(0,n.jsx)(l,r)})):l(r)}var k=j;return y(v);})();\n;return Component;"
+  },
+  "_id": "projects/raspberry-pi-web-server.mdx",
+  "_raw": {
+    "sourceFilePath": "projects/raspberry-pi-web-server.mdx",
+    "sourceFileName": "raspberry-pi-web-server.mdx",
+    "sourceFileDir": "projects",
+    "contentType": "mdx",
+    "flattenedPath": "projects/raspberry-pi-web-server"
+  },
+  "type": "Projects",
+  "slug": "raspberry-pi-web-server"
+}
