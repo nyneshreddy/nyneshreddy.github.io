@@ -5,9 +5,12 @@
 # ============================================================
 set -e
 
-# Load nvm
+# Load nvm and use the version pinned in .nvmrc
 export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
+if [ -s "$NVM_DIR/nvm.sh" ]; then
+    . "$NVM_DIR/nvm.sh"
+    nvm use
+fi
 
 PROJECT_DIR="$HOME/nyneshreddy.github.io"
 PI_HOST="pi"
@@ -15,7 +18,8 @@ IMAGE_NAME="nynesh-site"
 
 echo "=== Installing dependencies ==="
 cd "$PROJECT_DIR"
-npm install --legacy-peer-deps
+node --version
+npm ci
 
 echo "=== Building Next.js site ==="
 npm run build
