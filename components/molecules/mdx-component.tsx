@@ -1,6 +1,6 @@
 import type { ClassValue } from 'clsx'
 import Image from 'next/image'
-import { useMDXComponent } from 'next-contentlayer/hooks'
+import { useMDXComponent } from 'next-contentlayer2/hooks'
 
 import { FadeIn } from '@/components/atoms/fade-in'
 import { cn } from '@/lib/utils'

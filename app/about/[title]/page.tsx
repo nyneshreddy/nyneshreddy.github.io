@@ -23,8 +23,9 @@ export async function generateStaticParams() {
   }))
 }
 
-export default async function Page({ params }: { params: ParamsProps }) {
-  const content = await getContent(params)
+export default async function Page({ params }: { params: Promise<ParamsProps> }) {
+  const resolvedParams = await params
+  const content = await getContent(resolvedParams)
   if (!content) return notFound()
 
   return <MDXComponent code={content.body.code} />
