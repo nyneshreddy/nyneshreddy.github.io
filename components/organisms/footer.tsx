@@ -7,7 +7,7 @@ import {
   TooltipContent,
   TooltipProvider,
   TooltipTrigger
-} from '@/../components/atoms/tooltip'
+} from '@/components/atoms/tooltip'
 
 export const Footer = async () => {
   return (

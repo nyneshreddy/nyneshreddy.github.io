@@ -9,10 +9,10 @@ import {
   AccordionContent,
   AccordionItem,
   AccordionTrigger
-} from '@/../components/atoms/accordion'
-import { AsideLink } from '@/../components/atoms/aside-link'
+} from '@/components/atoms/accordion'
+import { AsideLink } from '@/components/atoms/aside-link'
 
-import { FadeIn, FadeInStagger } from '@/../components/atoms/fade-in'
+import { FadeIn, FadeInStagger } from '@/components/atoms/fade-in'
 
 export default function ArticleLayout({ children }: { children: React.ReactNode }) {
   const params = useParams()

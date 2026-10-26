@@ -1,13 +1,16 @@
 import { Suspense } from 'react'
-import { RiReactjsLine, RiHtml5Fill } from 'react-icons/ri'
-import { TbBrandNextjs } from 'react-icons/tb'
 import { HiTerminal } from 'react-icons/hi'
+import { RiHtml5Fill, RiReactjsLine } from 'react-icons/ri'
+import { TbBrandNextjs } from 'react-icons/tb'
 
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/../components/atoms/accordion'
-import { AsideLink } from '@/../components/atoms/aside-link'
-import { FadeInStagger, FadeIn } from '@/../components/atoms/fade-in'
-
-
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger
+} from '@/components/atoms/accordion'
+import { AsideLink } from '@/components/atoms/aside-link'
+import { FadeIn, FadeInStagger } from '@/components/atoms/fade-in'
 
 export default function AboutLayout({ children }: { children: React.ReactNode }) {
   return (
@@ -16,13 +19,19 @@ export default function AboutLayout({ children }: { children: React.ReactNode })
         <Accordion type='single' collapsible defaultValue='item-0'>
           {data.map((item) => (
             <AccordionItem value={item.title} key={item.title}>
-              <AccordionTrigger className='border-b border-lines px-5 py-2.5 text-left'>{item.title}</AccordionTrigger>
+              <AccordionTrigger className='border-b border-lines px-5 py-2.5 text-left'>
+                {item.title}
+              </AccordionTrigger>
               <AccordionContent className='mt-5 space-y-1'>
                 <FadeInStagger faster>
                   {item.list.map((listItem) => (
                     <FadeIn key={listItem.title}>
                       <Suspense fallback={<>Loading...</>}>
-                        <AsideLink href={listItem.href} startWith='/projects' title={listItem.title}>
+                        <AsideLink
+                          href={listItem.href}
+                          startWith='/projects'
+                          title={listItem.title}
+                        >
                           {listItem.icon}
                           {listItem.title}
                         </AsideLink>
@@ -35,7 +44,9 @@ export default function AboutLayout({ children }: { children: React.ReactNode })
           ))}
         </Accordion>
       </aside>
-      <section className='md:col-span-9 lg:col-span-10 col-span-12 overflow-y-auto relative h-[84dvh] md:h-auto'>{children}</section>
+      <section className='md:col-span-9 lg:col-span-10 col-span-12 overflow-y-auto relative h-[84dvh] md:h-auto'>
+        {children}
+      </section>
     </section>
   )
 }

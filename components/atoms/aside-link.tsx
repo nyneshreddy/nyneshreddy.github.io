@@ -3,7 +3,7 @@ import type { ClassValue } from 'clsx'
 import Link from 'next/link'
 import { useSearchParams, useSelectedLayoutSegment } from 'next/navigation'
 
-import { cn } from '@/../lib/utils'
+import { cn } from '@/lib/utils'
 
 type Props = {
   href: string

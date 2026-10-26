@@ -1,14 +1,14 @@
 import { defineDocumentType, makeSource } from 'contentlayer/source-files'
-import remarkGfm from 'remark-gfm'
+import rehypeAutolinkHeadings from 'rehype-autolink-headings'
 import rehypePrettyCode from 'rehype-pretty-code'
 import rehypeSlug from 'rehype-slug'
-import rehypeAutolinkHeadings from 'rehype-autolink-headings'
+import remarkGfm from 'remark-gfm'
 
 /** @type {import('contentlayer/source-files').ComputedFields} */
 const computedFields = {
   slug: {
     type: 'string',
-    resolve: doc => doc._raw.sourceFileName.replace(/\.mdx/, '')
+    resolve: (doc) => doc._raw.sourceFileName.replace(/\.mdx/, '')
   }
 }
 
@@ -61,7 +61,7 @@ const Articles = defineDocumentType(() => ({
     ...computedFields,
     headings: {
       type: 'json',
-      resolve: async doc => {
+      resolve: async (doc) => {
         const regXHeader = /\n(?<flag>#{1,6})\s+(?<content>.+)/g
         const headings = Array.from(doc.body.raw.matchAll(regXHeader)).map(({ groups }) => {
           const flag = groups?.flag

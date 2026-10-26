@@ -1,21 +1,21 @@
-import { notFound } from 'next/navigation'
 import { allProjects } from 'contentlayer/generated'
+import { notFound } from 'next/navigation'
 
-import { MDXComponent } from '@/../components/molecules/mdx-component'
+import { MDXComponent } from '@/components/molecules/mdx-component'
 
 type ParamsProps = {
   title: string
 }
 
 async function getProjectFromParams(params: ParamsProps) {
-  const post = allProjects.find(post => post.slug === params.title)
+  const post = allProjects.find((post) => post.slug === params.title)
   if (!post) null
 
   return post
 }
 
 export async function generateStaticParams() {
-  return allProjects.map(post => ({
+  return allProjects.map((post) => ({
     title: post.slug
   }))
 }

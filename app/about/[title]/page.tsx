@@ -1,7 +1,7 @@
 import { allAbouts } from 'contentlayer/generated'
 import { notFound } from 'next/navigation'
 
-import { MDXComponent } from '@/../components/molecules/mdx-component'
+import { MDXComponent } from '@/components/molecules/mdx-component'
 
 type ParamsProps = {
   title: string
@@ -9,7 +9,7 @@ type ParamsProps = {
 
 async function getContent(params: ParamsProps) {
   const post = allAbouts.find((post) => post.slug === params.title)
-  if (!post) null
+  if (!post) return null
   return post
 }
 
