@@ -1,13 +1,13 @@
 ---
 name: git-flow
-description: Enforces structured Git Flow for feature branches, repository identity and credential setup, simple and assertive English copy, high-signal commit messages, verification of GitHub Actions and Vercel build checks, and post-merge deployment monitoring.
+description: Enforces structured Git Flow for feature branches, repository identity and credentials, simple and assertive English copy, high-signal commit messages, mandatory user confirmation before PR creation, and CI/Vercel verification.
 ---
 
 # Git Flow & Deployment Verification
 
 ## Overview
 
-Use this workflow for every codebase modification. Never commit directly to `main`. Work strictly in feature branches, ensure correct author credentials, enforce simple and assertive English across all copy, verify all CI and Vercel checks before merging, and monitor post-merge production deployments until completion.
+Use this workflow for every codebase modification. Never commit directly to `main`. Work strictly in feature branches, ensure correct author credentials, enforce simple and assertive English across all copy, always ask the user if they want to add more changes before creating a pull request, verify all CI and Vercel checks before merging, and monitor post-merge production deployments until completion.
 
 ---
 
@@ -113,14 +113,16 @@ Validate modifications locally before staging:
 
 ---
 
-## 6. Remote Push & Pull Request
+## 6. Pre-PR User Confirmation & Remote Push
 
-1. **Push to origin**:
-   Push the feature branch to the remote repository:
+1. **Ask user before opening a Pull Request**:
+   Before pushing and opening a pull request, **always ask the user** if they want to add more changes to the current branch or proceed with creating the pull request. Never create a PR unprompted without asking.
+2. **Push to origin**:
+   Once the user confirms the branch is ready, push the feature branch to the remote repository:
    ```bash
    git push -u origin <branch-name>
    ```
-2. **Open Pull Request via GitHub CLI**:
+3. **Open Pull Request via GitHub CLI**:
    Provide a concise, assertive title and a clear summary:
    ```bash
    gh pr create --title "<Type>: <Assertive summary>" --body "## Summary

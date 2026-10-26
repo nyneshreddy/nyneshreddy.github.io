@@ -21,11 +21,13 @@ All AI agents interacting with this repository must follow the structured Git Fl
    - Use direct, active voice. Eliminate hedging, tentative words, and apologies.
 4. **Commit Messages**:
    - Write clear, imperative, high-signal commit messages explaining why the change was made.
-5. **Pre-Merge Verification**:
-   - Open a pull request using `gh pr create`.
+5. **Pre-PR User Confirmation**:
+   - Always ask the user if they want to add more changes to the branch before creating a pull request.
+6. **Pre-Merge Verification**:
+   - Once confirmed, push the branch and open a pull request using `gh pr create`.
    - Verify that **both** GitHub Actions and Vercel build checks pass (`gh pr checks <pr> --watch`).
    - Do not merge until all automated checks are green.
-6. **Merging & Post-Merge Deployment**:
+7. **Merging & Post-Merge Deployment**:
    - Squash-merge into `main` and delete the feature branch.
    - Monitor the post-merge production deployment (`gh run list --branch main --limit 1` and `gh run watch <run-id>`) until completion.
    - Pull the updated `main` branch locally.
