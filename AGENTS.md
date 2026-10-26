@@ -10,21 +10,24 @@ All AI agents interacting with this repository must follow the structured Git Fl
 
 ### Core Principles
 
-1. **Branching**:
+1. **Git Identity & Credentials**:
+   - Ensure repository `user.name` and `user.email` match the verified GitHub profile (`Nynesh Reddy Gujjula <nyneshreddy@gmail.com>`).
+   - Use `gh auth git-credential` as the credential helper.
+2. **Branching**:
    - Never commit directly to `main`.
    - Always create and switch to a dedicated branch (`feature/<name>`, `fix/<name>`, `docs/<name>`, `chore/<name>`).
-2. **Language and Tone**:
+3. **Language and Tone**:
    - Write all UI copy, documentation, code comments, commit messages, and PR descriptions in **simple and assertive English**.
    - Use direct, active voice. Eliminate hedging, tentative words, and apologies.
-3. **Commit Messages**:
+4. **Commit Messages**:
    - Write clear, imperative, high-signal commit messages explaining why the change was made.
-4. **Verification**:
-   - Run local checks (`npm run lint`, `npm run build`) before pushing.
+5. **Pre-Merge Verification**:
    - Open a pull request using `gh pr create`.
-   - Verify that **both** GitHub Actions and Vercel build checks pass (`gh pr checks --watch`).
+   - Verify that **both** GitHub Actions and Vercel build checks pass (`gh pr checks <pr> --watch`).
    - Do not merge until all automated checks are green.
-5. **Merging**:
+6. **Merging & Post-Merge Deployment**:
    - Squash-merge into `main` and delete the feature branch.
+   - Monitor the post-merge production deployment (`gh run list --branch main --limit 1` and `gh run watch <run-id>`) until completion.
    - Pull the updated `main` branch locally.
 
 ---
