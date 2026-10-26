@@ -1,10 +1,15 @@
-import { Suspense } from 'react'
 import { allAbouts } from 'contentlayer/generated'
+import { Suspense } from 'react'
 import { SiTypescript } from 'react-icons/si'
 
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/../components/atoms/accordion'
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger
+} from '@/../components/atoms/accordion'
 import { AsideLink } from '@/../components/atoms/aside-link'
-import { FadeInStagger, FadeIn } from '@/../components/atoms/fade-in'
+import { FadeIn, FadeInStagger } from '@/../components/atoms/fade-in'
 
 export default function AboutLayout({ children }: { children: React.ReactNode }) {
   return (
@@ -12,7 +17,9 @@ export default function AboutLayout({ children }: { children: React.ReactNode })
       <aside className='md:col-span-3 lg:col-span-2 border-r border-lines md:block hidden overflow-y-auto'>
         <Accordion type='single' collapsible defaultValue='about'>
           <AccordionItem value={'about'} defaultChecked>
-            <AccordionTrigger className='border-b border-lines px-5 py-2.5 text-left'>About Me</AccordionTrigger>
+            <AccordionTrigger className='border-b border-lines px-5 py-2.5 text-left'>
+              About Me
+            </AccordionTrigger>
             <AccordionContent className='mt-5 space-y-1'>
               <FadeInStagger faster>
                 {allAbouts.map(({ title }) => (
@@ -30,7 +37,9 @@ export default function AboutLayout({ children }: { children: React.ReactNode })
           </AccordionItem>
         </Accordion>
       </aside>
-      <section className='md:col-span-9 lg:col-span-10 col-span-12 overflow-y-auto relative h-[84dvh] md:h-auto'>{children}</section>
+      <section className='md:col-span-9 lg:col-span-10 col-span-12 overflow-y-auto relative h-[84dvh] md:h-auto'>
+        {children}
+      </section>
     </section>
   )
 }

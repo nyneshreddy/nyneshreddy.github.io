@@ -19,10 +19,11 @@ IMAGE_NAME="nynesh-site"
 echo "=== Installing dependencies ==="
 cd "$PROJECT_DIR"
 node --version
-npm ci
+pnpm --version
+pnpm install --frozen-lockfile
 
 echo "=== Building Next.js site ==="
-npm run build
+pnpm run build
 
 echo "=== Verifying build output ==="
 if [ ! -d "out" ]; then

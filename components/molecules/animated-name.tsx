@@ -1,5 +1,5 @@
 'use client'
-import React, { useState, useEffect, useRef, useCallback } from 'react'
+import React, { useCallback, useEffect, useRef, useState } from 'react'
 
 const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
 
@@ -21,7 +21,7 @@ export const AnimatedName = () => {
 
     const animate = () => {
       setIsAnimating(true)
-      setText(prevText =>
+      setText((prevText) =>
         prevText
           .split('')
           .map((_, index) => {
@@ -56,7 +56,7 @@ export const AnimatedName = () => {
         currentRef.removeEventListener('mouseover', handleMouseOver)
       }
     }
-  }, [handleMouseOver, ref])
+  }, [handleMouseOver])
 
   return (
     <h1 ref={ref} className='md:text-6xl sm:text-4xl text-3xl font-medium'>
