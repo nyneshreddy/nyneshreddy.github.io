@@ -36,10 +36,12 @@ All AI agents interacting with this repository must follow the structured Git Fl
 
 | Command | Purpose |
 |---|---|
-| `npm run dev` | Start the local Next.js development server |
-| `npm run lint` | Run ESLint checks |
-| `npm run build` | Compile Contentlayer and generate static export to `out/` |
-| `bash build.sh` | Clean build script using nvm and `npm ci` |
+| `pnpm dev` | Start the local Next.js development server |
+| `pnpm lint` | Run Biome linter checks |
+| `pnpm lint:fix` | Automatically apply safe Biome lint fixes |
+| `pnpm format` | Format repository code using Biome |
+| `pnpm build` | Compile Contentlayer and generate static export to `out/` |
+| `bash build.sh` | Clean build script using nvm and pnpm |
 | `bash deploy.sh` | Deploy to Raspberry Pi container environment |
 
 ---

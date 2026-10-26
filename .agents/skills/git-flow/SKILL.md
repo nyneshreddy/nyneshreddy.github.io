@@ -75,11 +75,11 @@ Validate modifications locally before staging:
 
 1. **Linting**:
    ```bash
-   npm run lint
+   pnpm lint
    ```
 2. **Build and type checking**:
    ```bash
-   npm run build
+   pnpm build
    ```
 3. **Review diff**:
    Confirm that only intended files are changed:

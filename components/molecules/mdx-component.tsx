@@ -1,6 +1,6 @@
+import type { ClassValue } from 'clsx'
 import Image from 'next/image'
 import { useMDXComponent } from 'next-contentlayer/hooks'
-import { ClassValue } from 'clsx'
 
 import { FadeIn } from '@/../components/atoms/fade-in'
 import { cn } from '@/../lib/utils'
@@ -9,7 +9,15 @@ const components = {
   Image
 }
 
-export function MDXComponent({ code, className, transparentBg = true }: { code: string; className?: ClassValue; transparentBg?: boolean }) {
+export function MDXComponent({
+  code,
+  className,
+  transparentBg = true
+}: {
+  code: string
+  className?: ClassValue
+  transparentBg?: boolean
+}) {
   const Component = useMDXComponent(code)
 
   return (

@@ -1,9 +1,17 @@
+import type { Projects } from 'contentlayer/generated'
 import Image from 'next/image'
 import Link from 'next/link'
-import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger, DialogFooter } from '@/../components/atoms/dialog'
 import { Badge } from '@/../components/atoms/badge'
 import { buttonVariants } from '@/../components/atoms/button'
-import { Projects } from 'contentlayer/generated'
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger
+} from '@/../components/atoms/dialog'
 
 export const ProjectCard = ({ data }: { data: Projects }) => {
   return (
@@ -28,7 +36,9 @@ export const ProjectCard = ({ data }: { data: Projects }) => {
           </figure>
 
           <div className='p-3'>
-            <p className='line-clamp-5 text-off-white text-left text-sm text-muted-foreground'>{data.summary}</p>
+            <p className='line-clamp-5 text-off-white text-left text-sm text-muted-foreground'>
+              {data.summary}
+            </p>
           </div>
         </article>
       </DialogTrigger>
@@ -37,7 +47,12 @@ export const ProjectCard = ({ data }: { data: Projects }) => {
           <DialogTitle className='mb-2'>{data.title || ''}</DialogTitle>
           <DialogDescription>
             <figure className='relative aspect-video overflow-hidden rounded-md mb-5'>
-              <Image src={data.image || ''} alt={data.title || ''} fill className='object-cover object-top group-hover:scale-105 transition-transform duration-500' />
+              <Image
+                src={data.image || ''}
+                alt={data.title || ''}
+                fill
+                className='object-cover object-top group-hover:scale-105 transition-transform duration-500'
+              />
             </figure>
             <ul className='flex items-center gap-x-2 border-y py-2'>
               <li className='text-foreground'>Technologies :</li>

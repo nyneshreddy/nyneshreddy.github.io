@@ -1,7 +1,7 @@
 'use client'
 
-import { useEffect, useId, useRef, useState } from 'react'
 import { motion } from 'framer-motion'
+import { useEffect, useId, useRef, useState } from 'react'
 
 const Block = ({
   x,
@@ -21,12 +21,12 @@ const Block = ({
 }
 
 export const GridPattern = ({ yOffset = 0, interactive = false, ...props }) => {
-  let id = useId()
-  let ref = useRef<React.ElementRef<'svg'>>(null)
-  let currentBlock = useRef<[x: number, y: number]>()
-  let counter = useRef(0)
-  let [hoveredBlocks, setHoveredBlocks] = useState<Array<[x: number, y: number, key: number]>>([])
-  let staticBlocks = [
+  const id = useId()
+  const ref = useRef<React.ElementRef<'svg'>>(null)
+  const currentBlock = useRef<[x: number, y: number]>()
+  const counter = useRef(0)
+  const [hoveredBlocks, setHoveredBlocks] = useState<Array<[x: number, y: number, key: number]>>([])
+  const staticBlocks = [
     [1, 1],
     [2, 2],
     [4, 3],
@@ -45,7 +45,7 @@ export const GridPattern = ({ yOffset = 0, interactive = false, ...props }) => {
         return
       }
 
-      let rect = ref.current.getBoundingClientRect()
+      const rect = ref.current.getBoundingClientRect()
       let x = event.clientX - rect.left
       let y = event.clientY - rect.top
       if (x < 0 || y < 0 || x > rect.width || y > rect.height) {
@@ -64,10 +64,12 @@ export const GridPattern = ({ yOffset = 0, interactive = false, ...props }) => {
 
       currentBlock.current = [x, y]
 
-      setHoveredBlocks(blocks => {
-        let key = counter.current++
-        let block = [x, y, key] as (typeof hoveredBlocks)[number]
-        return [...blocks, block].filter(block => !(block[0] === x && block[1] === y && block[2] !== key))
+      setHoveredBlocks((blocks) => {
+        const key = counter.current++
+        const block = [x, y, key] as (typeof hoveredBlocks)[number]
+        return [...blocks, block].filter(
+          (block) => !(block[0] === x && block[1] === y && block[2] !== key)
+        )
       })
     }
 
@@ -79,13 +81,20 @@ export const GridPattern = ({ yOffset = 0, interactive = false, ...props }) => {
   }, [yOffset, interactive])
 
   return (
-    <motion.svg ref={ref} aria-hidden='true' {...props} exit={{ opacity: 0 }} animate={{ opacity: 1 }} initial={{ opacity: 0 }}>
+    <motion.svg
+      ref={ref}
+      aria-hidden='true'
+      {...props}
+      exit={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      initial={{ opacity: 0 }}
+    >
       <rect width='100%' height='100%' fill={`url(#${id})`} strokeWidth='0' />
-      <svg x='50%' y={yOffset} strokeWidth='0' className='overflow-visible'>
-        {staticBlocks.map(block => (
+      <svg x='50%' y={yOffset} strokeWidth='0' className='overflow-visible' aria-hidden='true'>
+        {staticBlocks.map((block) => (
           <Block key={`${block}`} x={block[0]} y={block[1]} />
         ))}
-        {hoveredBlocks.map(block => (
+        {hoveredBlocks.map((block) => (
           <Block
             key={block[2]}
             x={block[0]}
@@ -93,13 +102,21 @@ export const GridPattern = ({ yOffset = 0, interactive = false, ...props }) => {
             animate={{ opacity: [0, 1, 0] }}
             transition={{ duration: 1, times: [0, 0, 1] }}
             onAnimationComplete={() => {
-              setHoveredBlocks(blocks => blocks.filter(b => b[2] !== block[2]))
+              setHoveredBlocks((blocks) => blocks.filter((b) => b[2] !== block[2]))
             }}
           />
         ))}
       </svg>
       <defs>
-        <pattern id={id} width='96' height='480' x='50%' patternUnits='userSpaceOnUse' patternTransform={`translate(0 ${yOffset})`} fill='none'>
+        <pattern
+          id={id}
+          width='96'
+          height='480'
+          x='50%'
+          patternUnits='userSpaceOnUse'
+          patternTransform={`translate(0 ${yOffset})`}
+          fill='none'
+        >
           <path d='M128 0 98.572 147.138A16 16 0 0 1 82.883 160H13.117a16 16 0 0 0-15.69 12.862l-26.855 134.276A16 16 0 0 1-45.117 320H-116M64-160 34.572-12.862A16 16 0 0 1 18.883 0h-69.766a16 16 0 0 0-15.69 12.862l-26.855 134.276A16 16 0 0 1-109.117 160H-180M192 160l-29.428 147.138A15.999 15.999 0 0 1 146.883 320H77.117a16 16 0 0 0-15.69 12.862L34.573 467.138A16 16 0 0 1 18.883 480H-52M-136 480h58.883a16 16 0 0 0 15.69-12.862l26.855-134.276A16 16 0 0 1-18.883 320h69.766a16 16 0 0 0 15.69-12.862l26.855-134.276A16 16 0 0 1 109.117 160H192M-72 640h58.883a16 16 0 0 0 15.69-12.862l26.855-134.276A16 16 0 0 1 45.117 480h69.766a15.999 15.999 0 0 0 15.689-12.862l26.856-134.276A15.999 15.999 0 0 1 173.117 320H256M-200 320h58.883a15.999 15.999 0 0 0 15.689-12.862l26.856-134.276A16 16 0 0 1-82.883 160h69.766a16 16 0 0 0 15.69-12.862L29.427 12.862A16 16 0 0 1 45.117 0H128' />
         </pattern>
       </defs>

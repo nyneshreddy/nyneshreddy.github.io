@@ -1,10 +1,14 @@
 'use client'
-import Link from 'next/link'
 import { Menu } from 'lucide-react'
-import { Fragment, createContext, useContext, useState } from 'react'
-
-import { FadeIn, AnimatePresence } from '@/../components/atoms/fade-in'
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/../components/atoms/accordion'
+import Link from 'next/link'
+import { createContext, Fragment, useContext, useState } from 'react'
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger
+} from '@/../components/atoms/accordion'
+import { AnimatePresence, FadeIn } from '@/../components/atoms/fade-in'
 
 interface NavbarMobileContextProps {
   isOpen: boolean
@@ -17,10 +21,12 @@ export const NavbarProvider = ({ children }: { children: React.ReactNode }) => {
   const [isOpen, setIsOpen] = useState(false)
 
   const toggleNavbar = () => {
-    setIsOpen(prevIsOpen => !prevIsOpen)
+    setIsOpen((prevIsOpen) => !prevIsOpen)
   }
 
-  return <NavbarContext.Provider value={{ isOpen, toggleNavbar }}>{children}</NavbarContext.Provider>
+  return (
+    <NavbarContext.Provider value={{ isOpen, toggleNavbar }}>{children}</NavbarContext.Provider>
+  )
 }
 
 export const useNavbarMobile = (): NavbarMobileContextProps => {
@@ -35,7 +41,11 @@ export const NavbarMobileBtn: React.FC = () => {
   const { toggleNavbar } = useNavbarMobile()
 
   return (
-    <button className='text-muted-foreground ml-auto px-2.5 block md:hidden' onClick={toggleNavbar}>
+    <button
+      type='button'
+      className='text-muted-foreground ml-auto px-2.5 block md:hidden'
+      onClick={toggleNavbar}
+    >
       <Menu />
     </button>
   )
@@ -47,16 +57,26 @@ export const NavbarMobile = () => {
   return (
     <AnimatePresence>
       {isOpen && (
-        <FadeIn fromTopToBottom className='absolute top-[57px] left-0 bg-background h-[calc(100%-57px-27px)] w-full z-50 p-5 divide-y overflow-y-auto'>
+        <FadeIn
+          fromTopToBottom
+          className='absolute top-[57px] left-0 bg-background h-[calc(100%-57px-27px)] w-full z-50 p-5 divide-y overflow-y-auto'
+        >
           {navMenu.map((menu, i) => (
             <Fragment key={i}>
               {menu.child ? (
                 <Accordion type='single' collapsible>
                   <AccordionItem value={menu.name}>
-                    <AccordionTrigger className='text-2xl font-normal text-foreground'>{menu.name}</AccordionTrigger>
+                    <AccordionTrigger className='text-2xl font-normal text-foreground'>
+                      {menu.name}
+                    </AccordionTrigger>
                     <AccordionContent className='pl-5 divide-y'>
                       {menu.child.map((child, j) => (
-                        <Link href={child.path} key={j} className='block text-xl py-2 first:pt-0 last:pb-0 border-b last:border-0 text-muted-foreground' onClick={toggleNavbar}>
+                        <Link
+                          href={child.path}
+                          key={j}
+                          className='block text-xl py-2 first:pt-0 last:pb-0 border-b last:border-0 text-muted-foreground'
+                          onClick={toggleNavbar}
+                        >
                           {child.name}
                         </Link>
                       ))}
@@ -64,7 +84,11 @@ export const NavbarMobile = () => {
                   </AccordionItem>
                 </Accordion>
               ) : (
-                <Link href={menu.path} className='block text-2xl py-4 first:pt-0 last:pb-0' onClick={toggleNavbar}>
+                <Link
+                  href={menu.path}
+                  className='block text-2xl py-4 first:pt-0 last:pb-0'
+                  onClick={toggleNavbar}
+                >
                   {menu.name}
                 </Link>
               )}
@@ -158,7 +182,7 @@ export const navMenu = [
       {
         name: 'LinkedIn',
         path: 'https://www.linkedin.com/in/nyneshreddy/'
-      },
+      }
     ]
   }
 ]
