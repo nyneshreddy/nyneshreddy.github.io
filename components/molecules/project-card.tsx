@@ -58,8 +58,8 @@ export const ProjectCard = ({ data }: { data: Projects }) => {
               <li className='text-foreground'>Technologies :</li>
               {data.tag && (
                 <li className='space-x-1'>
-                  {data.tag.map((tech, i) => (
-                    <Badge key={i}>{tech}</Badge>
+                  {data.tag.map((tech) => (
+                    <Badge key={tech}>{tech}</Badge>
                   ))}
                 </li>
               )}

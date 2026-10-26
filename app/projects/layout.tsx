@@ -14,13 +14,13 @@ export default function AboutLayout({ children }: { children: React.ReactNode })
     <section className='grid grid-cols-12 overflow-hidden h-full'>
       <aside className='md:col-span-3 lg:col-span-2 border-r border-lines md:block hidden overflow-y-auto'>
         <Accordion type='single' collapsible defaultValue='item-0'>
-          {data.map((item, i) => (
-            <AccordionItem value={`item-${i}`} key={i}>
+          {data.map((item) => (
+            <AccordionItem value={item.title} key={item.title}>
               <AccordionTrigger className='border-b border-lines px-5 py-2.5 text-left'>{item.title}</AccordionTrigger>
               <AccordionContent className='mt-5 space-y-1'>
                 <FadeInStagger faster>
-                  {item.list.map((listItem, j) => (
-                    <FadeIn key={j}>
+                  {item.list.map((listItem) => (
+                    <FadeIn key={listItem.title}>
                       <Suspense fallback={<>Loading...</>}>
                         <AsideLink href={listItem.href} startWith='/projects' title={listItem.title}>
                           {listItem.icon}

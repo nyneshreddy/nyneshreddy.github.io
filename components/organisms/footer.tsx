@@ -1,5 +1,4 @@
 import Link from 'next/link'
-import { AiOutlineClockCircle } from 'react-icons/ai'
 import { BiGitBranch, BiRefresh, BiXCircle } from 'react-icons/bi'
 import { IoLogoGithub, IoWarningOutline } from 'react-icons/io5'
 
