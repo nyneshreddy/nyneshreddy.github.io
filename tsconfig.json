@@ -29,7 +29,8 @@
       "contentlayer/generated": [
         "./.contentlayer/generated"
       ]
-    }
+    },
+    "noUncheckedSideEffectImports": false
   },
   "include": [
     "next-env.d.ts",
