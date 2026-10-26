@@ -73,15 +73,19 @@ All UI text, documentation, commit messages, and PR descriptions must use **simp
 
 Validate modifications locally before staging:
 
-1. **Linting**:
+1. **Linting and formatting**:
    ```bash
-   pnpm lint
+   pnpm check
    ```
-2. **Build and type checking**:
+2. **Type checking**:
+   ```bash
+   pnpm typecheck
+   ```
+3. **Build verification**:
    ```bash
    pnpm build
    ```
-3. **Review diff**:
+4. **Review diff**:
    Confirm that only intended files are changed:
    ```bash
    git status

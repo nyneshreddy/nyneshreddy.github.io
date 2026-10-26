@@ -40,6 +40,8 @@ All AI agents interacting with this repository must follow the structured Git Fl
 | `pnpm lint` | Run Biome linter checks |
 | `pnpm lint:fix` | Automatically apply safe Biome lint fixes |
 | `pnpm format` | Format repository code using Biome |
+| `pnpm typecheck` | Run TypeScript compiler type checking without emitting files |
+| `pnpm check` | Run Biome checks and TypeScript type checking |
 | `pnpm build` | Compile Contentlayer and generate static export to `out/` |
 | `bash build.sh` | Clean build script using nvm and pnpm |
 | `bash deploy.sh` | Deploy to Raspberry Pi container environment |
