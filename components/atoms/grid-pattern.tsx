@@ -23,7 +23,7 @@ const Block = ({
 export const GridPattern = ({ yOffset = 0, interactive = false, ...props }) => {
   const id = useId()
   const ref = useRef<React.ElementRef<'svg'>>(null)
-  const currentBlock = useRef<[x: number, y: number]>()
+  const currentBlock = useRef<[x: number, y: number] | undefined>(undefined)
   const counter = useRef(0)
   const [hoveredBlocks, setHoveredBlocks] = useState<Array<[x: number, y: number, key: number]>>([])
   const staticBlocks = [

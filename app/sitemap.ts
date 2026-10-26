@@ -3,6 +3,8 @@ import type { MetadataRoute } from 'next'
 
 import { ENV } from '@/lib/constants'
 
+export const dynamic = 'force-static'
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const WEBSITE_URL = ENV.NEXT_PUBLIC_WEBSITE_URL
 

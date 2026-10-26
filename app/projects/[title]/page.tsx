@@ -9,7 +9,7 @@ type ParamsProps = {
 
 async function getProjectFromParams(params: ParamsProps) {
   const post = allProjects.find((post) => post.slug === params.title)
-  if (!post) null
+  if (!post) return null
 
   return post
 }
@@ -20,8 +20,9 @@ export async function generateStaticParams() {
   }))
 }
 
-export default async function ProjectDetail({ params }: { params: ParamsProps }) {
-  const about = await getProjectFromParams(params)
+export default async function ProjectDetail({ params }: { params: Promise<ParamsProps> }) {
+  const resolvedParams = await params
+  const about = await getProjectFromParams(resolvedParams)
   if (!about) return notFound()
 
   return (

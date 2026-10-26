@@ -1,10 +1,10 @@
-import { defineDocumentType, makeSource } from 'contentlayer/source-files'
+import { defineDocumentType, makeSource } from 'contentlayer2/source-files'
 import rehypeAutolinkHeadings from 'rehype-autolink-headings'
 import rehypePrettyCode from 'rehype-pretty-code'
 import rehypeSlug from 'rehype-slug'
 import remarkGfm from 'remark-gfm'
 
-/** @type {import('contentlayer/source-files').ComputedFields} */
+/** @type {import('contentlayer2/source-files').ComputedFields} */
 const computedFields = {
   slug: {
     type: 'string',
@@ -12,7 +12,7 @@ const computedFields = {
   }
 }
 
-/** @type {import('contentlayer/source-files').defineDocumentType} */
+/** @type {import('contentlayer2/source-files').defineDocumentType} */
 const About = defineDocumentType(() => ({
   name: 'About',
   filePathPattern: `about/**/*.mdx`,
@@ -24,7 +24,7 @@ const About = defineDocumentType(() => ({
   computedFields
 }))
 
-/** @type {import('contentlayer/source-files').defineDocumentType} */
+/** @type {import('contentlayer2/source-files').defineDocumentType} */
 const Projects = defineDocumentType(() => ({
   name: 'Projects',
   filePathPattern: `projects/**/*.mdx`,
@@ -42,7 +42,7 @@ const Projects = defineDocumentType(() => ({
   computedFields
 }))
 
-/** @type {import('contentlayer/source-files').defineDocumentType} */
+/** @type {import('contentlayer2/source-files').defineDocumentType} */
 const Articles = defineDocumentType(() => ({
   name: 'Articles',
   filePathPattern: `articles/**/*.mdx`,
@@ -111,7 +111,7 @@ const rehypePrettyOptions = {
   keepBackground: true
 }
 
-/** @type {import('contentlayer/source-files').SourcePlugin} */
+/** @type {import('contentlayer2/source-files').SourcePlugin} */
 export default makeSource({
   contentDirPath: './content',
   documentTypes: [About, Projects, Articles],
