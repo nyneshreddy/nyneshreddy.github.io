@@ -7,8 +7,8 @@ import {
   AccordionContent,
   AccordionItem,
   AccordionTrigger
-} from '@/../components/atoms/accordion'
-import { AnimatePresence, FadeIn } from '@/../components/atoms/fade-in'
+} from '@/components/atoms/accordion'
+import { AnimatePresence, FadeIn } from '@/components/atoms/fade-in'
 
 interface NavbarMobileContextProps {
   isOpen: boolean

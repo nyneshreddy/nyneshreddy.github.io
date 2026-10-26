@@ -70,7 +70,7 @@
     counter-reset: line;
   }
 
-  code>[data-line]::before {
+  code > [data-line]::before {
     counter-increment: line;
     content: counter(line);
     display: inline-block;
@@ -80,11 +80,11 @@
     color: gray;
   }
 
-  code[data-line-numbers-max-digits='2']>[data-line]::before {
+  code[data-line-numbers-max-digits="2"] > [data-line]::before {
     width: 2rem;
   }
 
-  code[data-line-numbers-max-digits='3']>[data-line]::before {
+  code[data-line-numbers-max-digits="3"] > [data-line]::before {
     width: 3rem;
   }
 
@@ -96,11 +96,11 @@
     @apply bg-gray-100;
   }
 
-  html.light [data-theme='dark'] {
+  html.light [data-theme="dark"] {
     display: none;
   }
 
-  html.dark [data-theme='light'] {
+  html.dark [data-theme="light"] {
     display: none;
   }
 

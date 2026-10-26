@@ -3,10 +3,10 @@
 import { allArticles } from 'contentlayer/generated'
 import Link from 'next/link'
 import { useSearchParams } from 'next/navigation'
-import { Badge } from '@/../components/atoms/badge'
-import { Button } from '@/../components/atoms/button'
-import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/../components/atoms/card'
-import { AnimatePresence, FadeIn, FadeInStagger } from '@/../components/atoms/fade-in'
+import { Badge } from '@/components/atoms/badge'
+import { Button } from '@/components/atoms/button'
+import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/atoms/card'
+import { AnimatePresence, FadeIn, FadeInStagger } from '@/components/atoms/fade-in'
 
 export default function Articles() {
   const searchParams = useSearchParams()

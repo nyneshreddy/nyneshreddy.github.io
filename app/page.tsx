@@ -1,6 +1,6 @@
-import { FadeIn } from '@/../components/atoms/fade-in'
-import { GridPattern } from '@/../components/atoms/grid-pattern'
-import { AnimatedName } from '@/../components/molecules/animated-name'
+import { FadeIn } from '@/components/atoms/fade-in'
+import { GridPattern } from '@/components/atoms/grid-pattern'
+import { AnimatedName } from '@/components/molecules/animated-name'
 
 export default function Home() {
   return (
@@ -21,8 +21,14 @@ export default function Home() {
           <div className='space-y-2 sm:text-sm text-xs'>
             <p className='text-muted-foreground'>{`// you can also visit my Github page`}</p>
             <p className='text-muted-foreground'>
-              <span className='text-purple'>const</span> <span className='text-green'>githubLink</span> ={' '}
-              <a target='_blank' rel='noopener noreferrer' href='https://github.com/nyneshreddy' className='text-light-brown hover:underline hover:text-foreground transition-colors'>
+              <span className='text-purple'>const</span>{' '}
+              <span className='text-green'>githubLink</span> ={' '}
+              <a
+                target='_blank'
+                rel='noopener noreferrer'
+                href='https://github.com/nyneshreddy'
+                className='text-light-brown hover:underline hover:text-foreground transition-colors'
+              >
                 &apos;https://github.com/nyneshreddy&apos;
               </a>
             </p>

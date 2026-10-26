@@ -7,9 +7,9 @@ import {
   AccordionContent,
   AccordionItem,
   AccordionTrigger
-} from '@/../components/atoms/accordion'
-import { AsideLink } from '@/../components/atoms/aside-link'
-import { FadeIn, FadeInStagger } from '@/../components/atoms/fade-in'
+} from '@/components/atoms/accordion'
+import { AsideLink } from '@/components/atoms/aside-link'
+import { FadeIn, FadeInStagger } from '@/components/atoms/fade-in'
 
 export default function AboutLayout({ children }: { children: React.ReactNode }) {
   return (
