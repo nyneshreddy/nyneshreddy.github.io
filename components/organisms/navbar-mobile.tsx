@@ -61,8 +61,8 @@ export const NavbarMobile = () => {
           fromTopToBottom
           className='absolute top-[57px] left-0 bg-background h-[calc(100%-57px-27px)] w-full z-50 p-5 divide-y overflow-y-auto'
         >
-          {navMenu.map((menu, i) => (
-            <Fragment key={i}>
+          {navMenu.map((menu) => (
+            <Fragment key={menu.name || menu.path}>
               {menu.child ? (
                 <Accordion type='single' collapsible>
                   <AccordionItem value={menu.name}>
@@ -70,10 +70,10 @@ export const NavbarMobile = () => {
                       {menu.name}
                     </AccordionTrigger>
                     <AccordionContent className='pl-5 divide-y'>
-                      {menu.child.map((child, j) => (
+                      {menu.child.map((child) => (
                         <Link
                           href={child.path}
-                          key={j}
+                          key={child.name || child.path}
                           className='block text-xl py-2 first:pt-0 last:pb-0 border-b last:border-0 text-muted-foreground'
                           onClick={toggleNavbar}
                         >

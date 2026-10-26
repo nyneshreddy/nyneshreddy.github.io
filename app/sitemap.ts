@@ -1,4 +1,4 @@
-import { MetadataRoute } from 'next'
+import type { MetadataRoute } from 'next'
 import { allAbouts } from 'contentlayer/generated'
 import { allProjects } from 'contentlayer/generated'
 import { allArticles } from 'contentlayer/generated'

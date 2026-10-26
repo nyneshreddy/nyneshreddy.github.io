@@ -8,7 +8,7 @@ import { FadeIn, FadeInStagger, AnimatePresence } from '@/../components/atoms/fa
 export default function ProjectPage() {
   const searchParams = useSearchParams()
   const tag = searchParams.get('tag')
-  let filteredProjects = tag ? allProjects.filter(project => project.tag?.includes(tag)) : allProjects
+  const filteredProjects = tag ? allProjects.filter(project => project.tag?.includes(tag)) : allProjects
 
   return (
     <FadeInStagger className='grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 p-5' faster>
